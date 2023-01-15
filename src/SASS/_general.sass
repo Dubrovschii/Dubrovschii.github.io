@@ -1,0 +1,222 @@
+          
+
+.container
+    min-height: 100%
+    min-width: 100%
+    padding: 0
+    margin: 0
+    margin-right: 0
+.menu
+    min-width: 1440px
+    height: 90px
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.15)
+    background-color: #ffffff
+    &_lian
+        padding-top: 28px
+        padding-left: 200px
+    &_bigan
+        width: 20px
+        height: 1px
+        background-color: #06060a  
+        transform: translateY(11px)
+        margin-right: 20px
+        animation-name: bigan
+        animation-duration: 3.2s
+        animation-delay: 3ms
+        @keyframes bigan
+            0%
+                rotate: 15deg
+            5%
+                rotate: 20deg
+            10%
+                rotate: 35deg
+            25%
+                rotate: 50deg
+            50%
+                rotate: 70deg
+            75%
+                rotate: 100deg
+            100%
+                rotate: 180deg             
+    &_list
+        display: flex
+        justify-content: flex-end
+        transform: translateY(-25px)
+        padding-right: 300px
+    &_link
+        padding-right: 45px
+        a
+            text-decoration: none
+            color: #808080
+            &:hover
+                content: ''
+                color: #808008      
+                font-weight: bold
+                cursor: pointer
+           
+            
+            
+.title
+    margin: 0
+    min-width: 1440px
+    height: 650px
+    opacity: 0.9
+    // background: url(../img/bg_home.jpg) center center/cover no-repeat
+  
+    &_text
+        color: #ffffff
+        font-family: Roboto
+        font-size: 48px
+        font-weight: 300
+        line-height: 24px
+        text-align: center
+        text-transform: uppercase
+        transform: translateY(140px)
+        padding: 18px
+        margin-left: 180px
+        margin-right: 180px
+        background: #000000
+    &_subtext
+        color: #000000
+        font-family: Roboto
+        font-size: 18px
+        font-weight: 300
+        font-style: normal
+        letter-spacing: normal
+        line-height: 24px
+        text-align: center
+        text-transform: uppercase
+        margin-top: 357px
+        transform: translateY(-170px)
+.portfolio
+    min-width: 1440px
+    min-height: 64
+    &_plus
+        width: 25px
+        height: 25px
+        background-color: #808008
+        border-radius: 100%
+        transform: translate(170px, -55px)                  
+        &:before
+            content: ''
+            display: block
+            margin: 0 auto
+            width: 15px
+            height: 2px
+            background-color: #000
+            transform: translateY(11px)
+            cursor: pointer
+            transition: 0.4s all
+        &:after
+            content: ''
+            display: block
+            margin: 0 auto
+            width: 2px
+            height: 16px
+            background-color: #000
+            transform: translateY(2px)
+            transition: 0.4s all
+        &:hover
+            &:before, &:after 
+                content: ''
+                background-color: red
+    &_menu
+        margin: 0
+        padding: 0
+    &_list
+        display: flex
+        justify-content: center  
+    &_link
+        margin-left: 45px
+        color: #777777
+        font-family: Roboto
+        font-size: 14px
+        font-weight: 700
+        line-height: 24px
+        text-align: center
+        text-transform: uppercase
+        text-decoration: none
+    &_item
+        display: flex
+        &:hover
+            content: ''
+            color: #808008
+        span
+            display: block
+            width: 2px
+            height: 25px
+            background: #777777
+            transform: rotate(25deg)
+            margin-left: 45px
+    &_btn
+        display: block
+        margin: 25px auto
+        transform: translateX(380px)
+        border-radius: 8px
+        &:hover
+            content: ''
+            color: #808008
+
+    &_foto
+        // position: relative
+        // display: flex
+        // flex-flow: row-reverse
+        // justify-content: space-between
+
+    &_part1
+        display: flex
+        justify-content: space-between
+        transform: translateX(-135px)
+    &_image7
+        padding-left: 65px
+    &_part2
+        display: flex
+        margin-top: 50px
+        justify-content: space-between
+        transform: translateX(-135px)
+    &_image
+        transform: translateY(-170px)
+    &_image1
+        transform: translateX(27px)
+    &_part3
+        display: flex
+        justify-content: space-between
+        transform: translateX(-165px)
+    &_image3
+        transform: translate(30px,-120px)
+    &_image5
+        transform: translate(117px, -270px)
+        width: 500px
+
+
+.row
+    transform: translateX(-35px) 
+    max-height: 1440px
+  
+footer
+    max-width: 1440px
+    height: 300px
+    margin: 0
+.finish
+    margin-top: 70px
+    &_logo
+        display: flex
+        justify-content: center
+        margin-top: 64px
+        margin-bottom: 44px
+        transform: translateX(-15px)
+    &_icons
+        display: flex
+        justify-content: center   
+    &_item
+        padding-right: 20px
+    &_img
+        width: 50px
+        height: 50px
+        margin: 25px 0
+    &_text
+        display: block
+        margin: 0 auto
+        text-align: center
+
+    

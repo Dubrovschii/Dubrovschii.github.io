@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Alexei" content="test"> 
+    <title>Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/lib/aos-master/dist/aos.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="popup_overlay" onclick="setClose($(this))"></div>
+    <header class="header ">
+        <div class="header__wrapper ">
+            <a href="" class="header__logo">
+                <img src="img/logo.svg " alt="logo1" >
+            </a>
+            <ul class="header__ul">
+                <li class="header__list">
+                    <a href="#">À la carte</a>
+                </li>
+                <li class="header__list">
+                    <a href="#">Wijnkaart</a>
+                </li>
+                <li class="header__list">
+                    <a href="#">Lunchmenu</a>
+                </li>
+                <li class="header__list">
+                    <a href="#contact">Contact</a>
+                </li>
+                
+            </ul>
+            <div class="header__phone">
+                <img src="icons/social/phone-gold.svg" alt="phoneGold" class="header__item">
+                <a href="tel:+3292825725" class="header__number">+32 9 282 57 25 </a>
+            </div>
+            <button class="burger" onclick="setOpenMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="header__mobmenu">
+            <ul class="header__ul1">
+                <li class="header__list">
+                    <a href="#">À la carte</a>
+                </li>
+                <li class="header__list">
+                    <a href="#">Wijnkaart</a>
+                </li>
+                <li class="header__list">
+                    <a href="#">Lunchmenu</a>
+                </li>
+                <li class="header__list">
+                    <a href="#contact">Contact</a>
+                </li>
+                
+            </ul>
+            <div class="header__phone-mob">
+                <img src="icons/social/phone-gold.svg" alt="phoneGold" class="header__item">
+                <a href="tel:+3292825725" class="header__number">+32 9 282 57 25 </a>
+            </div>
+        </div>
+    </header>
+    <section class="promo">
+        <div class="promo__wrap wrap1200">
+            <h3 class="promo__clock">OPEN EVERYDAY
+                6AM - 9PM.</h3>
+            <h1 class="promo__title">A bad day with lunch is better than a good day without it.</h1>
+            <div class="promo__down wrap1200">
+                <button class="promo__btn" onclick="setOpenModal(this)">Reserve a table</button>
+
+            <ul class="promo__icons">
+                <li class="promo__item">
+                    <a href="#">Fb</a>
+                </li>
+                <li class="promo__item">
+                    <a href="#">Ig</a>
+                </li>
+                <li class="promo__item">
+                    <a href="#">Tw</a>
+                </li>
+                <li class="promo__item">
+                    <a href="#">Yt</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="modal" style="display: none;">
+            <div class="modal__wrap wrap700">
+                <div class="modal__header">
+
+                </div>
+                <button class="modal__close" onclick="setCloseModal(this)">
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="contact__form modal__form">
+                    <div class="contact__form_name modal__form_name">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Input your name">
+                    </div>
+                    <div class="contact__form_email modal__form_phone">
+                        <label for="phone">Phone</label>
+                        <input type="phone" id="phone"
+                        placeholder="Input your phone">
+                    </div> 
+                    <div class="contact__form_email modal__form_date">
+                        <label>Select Date: </label>
+                        <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                            <input class="form-control " type="text" readonly />
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </div> 
+                    <div class="contact__form_email modal__form_time">
+                        <label for="phone">Time</label>
+                        <input type="phone" id="phone"
+                        placeholder="Input your time" class="timepicker">
+                    </div> 
+                </div>
+                <button class="contact__btn modal__btn">Send</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="menu">
+        <div class="menu__container wrap1200">
+            <div class="menu__wrapper">
+                <div class="menu__block">
+                    <div class="menu__block_title">Woensdag 12/01</div>
+                    <div class="menu__block_descr">Salade met Serrano <span></span><span></span><span></span>Steak Tartaar
+                    </div>
+                </div>
+                <hr class="menu__hr">
+                <div class="menu__block">
+                    <div class="menu__block_title">Donderdag 13/01</div>
+                    <div class="menu__block_descr">Toast Roquefort <span></span><span></span><span></span>Penne met Kip en Prei
+                    </div>
+                </div>
+                <hr class="menu__hr">
+                <div class="menu__block">
+                    <div class="menu__block_title">Vrijdag 14/01
+                    </div>
+                    <div class="menu__block_descr">Verrassing van de Chef <span></span><span></span><span></span>Penne met Kip en Prei
+                    </div>
+                </div>
+                <hr class="menu__hr">
+                <div class="menu__block">
+                    <div class="menu__block_title">Vrijdag 15/01
+                    </div>
+                    <div class="menu__block_descr">Verrassing van de Chef<span></span><span></span><span></span>Penne met Kip en Prei
+                    </div>
+                </div>
+                <hr class="menu__hr">
+                <div class="menu__block">
+                    <div class="menu__block_title">Vrijdag 16/01 
+
+                    </div>
+                    <div class="menu__block_descr">Verrassing van de Chef<span></span><span></span><span></span> Penne met Kip en Prei
+                    </div>
+                </div>
+                <hr class="menu__hr"> 
+            </div>
+            <div class="menu__wrapper_second">
+                <div class="menu__img_1">
+                    <img src="img/Rectangle 77.png" alt="">
+                </div>
+                <div class="menu__img_2">
+                    <img src="img/Rectangle 80.png" alt="">
+                </div>
+                <div class="menu__border"></div>
+            </div>
+
+
+        </div>
+     </section>  
+    <section class="carousel">
+       
+           <div class="carousel__wrapper wrap1200">
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide carousel__slide">
+                    <div class="carousel__icon">
+                        <img src="icons/“.png" alt="">
+                    </div>
+                    <div class="carousel__title">Goede service, lekker eten, toffe ambiance</div>
+                    <div class="carousel__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo  dolores et ea rebum. Stet clita kasd gubergren.
+                    </div>
+                    <div class="carousel__descr">ALAIN HEYNDRICKX</div>
+                  </div>
+                  <div class="swiper-slide carousel__slide">
+                    <div class="carousel__icon">
+                        <img src="icons/“.png" alt="">
+                    </div>
+                    <div class="carousel__title">Goede service, lekker eten, toffe ambiance</div>
+                    <div class="carousel__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo  dolores et ea rebum. Stet clita kasd gubergren.
+                    </div>
+                    <div class="carousel__descr">ALAIN HEYNDRICKX</div>
+                  </div>
+                  <div class="swiper-slide carousel__slide">
+                    <div class="carousel__icon">
+                        <img src="icons/“.png" alt="">
+                    </div>
+                    <div class="carousel__title">Goede service, lekker eten, toffe ambiance</div>
+                    <div class="carousel__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo  dolores et ea rebum. Stet clita kasd gubergren.
+                    </div>
+                    <div class="carousel__descr">ALAIN HEYNDRICKX</div>
+                  </div>
+                  
+                </div>
+                <div class="swiper-pagination"></div>
+              
+                <div class="swiper-button-prev" id="btn1"></div>
+                <div class="swiper-button-next" id="btn2"></div>
+              
+           </div>
+           
+               
+        </div>
+    </section>
+    <section class="bar">
+        <div class="bar__wrapper wrap1200">
+
+            <div class="bar__block" data-aos="zoom-out-left">
+                <div class="bar__block_text">
+            <div class="bar__block_text_title">LEKKER ETEN</div>
+            <div class="bar__block_text_hr"><hr></div>
+            <div class="bar__block_text_descr">Eten gaat niet over indruk maken op mensen. Het gaat erom dat ze zich op hun gemak voelen. Dat is onze filosofie, goed eten in een goede sfeer.</div>
+                </div>
+                    
+            <div class="bar__block_image" >
+                        <img src="img/food/Image.png" alt="">
+            </div>
+            </div>
+                
+            <div class="bar__block " data-aos="zoom-out-right">
+                    <div class="bar__block_image" >
+                        <img src="img/food/Image (1).png" alt="">
+                    </div>
+                    <div class="bar__block_text">
+                        <div class="bar__block_text_title">LEKKER ETEN</div>
+                        <div class="bar__block_text_hr"><hr></div>
+                        <div class="bar__block_text_descr">Eten gaat niet over indruk maken op mensen. Het gaat erom dat ze zich op hun gemak voelen. Dat is onze filosofie, goed eten in een goede sfeer.</div>
+                                </div>
+                </div>
+                
+            <div class="bar__block" data-aos="zoom-out-left">
+                    <div class="bar__block_text">
+                        <div class="bar__block_text_title">LEKKER ETEN</div>
+                        <div class="bar__block_text_hr"><hr></div>
+                        <div class="bar__block_text_descr">Eten gaat niet over indruk maken op mensen. Het gaat erom dat ze zich op hun gemak voelen. Dat is onze filosofie, goed eten in een goede sfeer.</div>
+                                </div>
+                                <div class="bar__block_image">
+                                    <img src="img/food/Image (2).png" alt="">
+                                </div>
+                </div>
+
+          </div>
+    </section>
+    <section class="carouselsecond">
+        <div class="carouselsecond__wrap wrap1200">
+           <div class="carouselsecond__start">
+            <div class="carouselsecond__text">
+                <div class="carouselsecond__title">
+                    Sfeerfoto`s
+                </div>
+                <div class="carouselsecond__descr">
+                    De beste manier om de sfeer te ervaren is eens langskomen.
+                    In tussentijd hebben we hier alvast wat foto’s voor je klaar.
+                </div>
+                
+               
+            </div>
+            <div class="carouselsecond__btn">
+                <div class="swiper-button-prev" id="btn3"></div>
+               <div class="swiper-button-next" id="btn4"></div>
+               
+           </div>
+           </div>
+           
+               
+            
+                <div class="swiper carouselsecond__swiper wrap700">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide carouselsecond__slide">
+                        <a
+                            data-fancybox="gallery"
+                            data-src="img/carousel/img5.png" alt="">
+                            <img src="img/carousel/img5.png" alt="">
+                        </a>
+
+                      </div>
+                  <div class="swiper-slide carouselsecond__slide">
+                    <a
+                        data-fancybox="gallery"
+                        data-src="img/carousel/img1.png" alt="">
+                        <img src="img/carousel/img1.png" alt="">
+                    </a>
+
+                  </div>
+                  <div class="swiper-slide carouselsecond__slide">
+                    <a
+                        data-fancybox="gallery"
+                        data-src="img/carousel/img2.png" alt="">
+                        <img src="img/carousel/img2.png" alt="">
+                    </a>
+
+                </div>
+                  <div class="swiper-slide carouselsecond__slide">
+                    <a
+                        data-fancybox="gallery"
+                        data-src="img/carousel/img3.png" alt="">
+                        <img src="img/carousel/img3.png" alt="">
+                    </a>
+
+                    </div>
+                    <div class="swiper-slide carouselsecond__slide">
+                        <a
+                            data-fancybox="gallery"
+                            data-src="img/carousel/img4.png" alt="">
+                            <img src="img/carousel/img4.png" alt="">
+                        </a>
+                        </div>
+                  </div>
+                </div>
+            </div>
+           
+        
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact__wrapper wrap1200">
+            <div class="contact__menu">
+            
+            <div class="contact__title">Contacts</div>
+                <div class="contact__block">
+                    <div class="contact__icon">
+                        <img src="icons/social/phone-white.svg" alt="" >
+                    </div>
+                    <div class="contact__descr">
+                        <div class="descr">Phone Number</div>
+                        <a class="link" href="tel:+329 2825725">+32 9 282 57 25</a>
+                    </div>
+                </div>    
+                <div class="contact__block">
+                    <div class="contact__icon">
+                        <img src="icons/social/mail.svg" alt="" >
+                        
+                    </div>
+                    <div class="contact__descr">
+                        <div class="descr">Email</div>
+                        <a class="link" href="#">info@email.com</a>
+                    </div>
+                </div> 
+                <div class="contact__block">
+                    <div class="contact__icon">
+                        <img src="icons/social/time.svg" alt="" >
+                       
+                    </div>
+                    <div class="contact__descr">
+                        <div class="descr">Opening Hours</div>
+                        <a class="link" href="#">Everyday from 6 AM - 9 PM</a>
+                    </div>
+                </div> 
+                <div class="contact__block">
+                    <div class="contact__icon">
+                        <img src="icons/social/map.svg" alt="" >
+                        
+                    </div>
+                    <div class="contact__descr">
+                        <div class="descr">Map Street</div>
+                        <a class="link" href="#">Jl. Raya Surabaya 2787</a>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="contact__quiz">
+                <div class="contact__title">Have any questions?</div>
+                <div class="contact__quiz_block">
+                    <form action="/">
+                    <div class="contact__form">
+                        <div class="contact__form_name">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Input your name">
+                        </div>
+                        <div class="contact__form_email">
+                            <label for="email">Email</label>
+                            <input type="email" id="email"
+                            placeholder="Input your email">
+                        </div> 
+                    </div>
+                        <div class="contact__form_message"> 
+                            <label for="message">Speciale Request</label> <br>
+                            <textarea name="" id="message" placeholder="Input your Speciale Request"></textarea>
+                        </div>
+                        <br>
+                        <button class="contact__btn">Send</button>
+
+                    </form>
+                </div>
+                
+
+            </div>
+
+
+
+        </div>
+    </section>
+    <section class="map">
+        <div class="map__wrap wrap1200">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2492.521305303399!2d2.9195470410009725!3d51.23220700161867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0KDQtdGB0YLQvtGA0LDQvdGL!5e0!3m2!1sru!2s!4v1676555374455!5m2!1sru!2s" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__wrap wrap1200">
+            <div class="footer__logo">
+                <img src="img/logo2.png" alt="logo2">
+            </div>
+
+            <div class="footer__icons">
+                <ul class="footer__icons">
+                    <div class="footer__item"><a href="#">Fb</a></div>
+                    <div class="footer__item"><a href="#">Ig</a></div>
+                    <div class="footer__item"><a href="#">Tw</a></div>
+                    <div class="footer__item"><a href="#">Yt</a></div>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="/src/lib/jquery/jquery.2.2.2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script src="/src/lib/aos-master/dist/aos.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+$(function () {
+  $("#datepicker").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+  }).datepicker('update', new Date());
+});
+    $('.timepicker').timepicker({
+    timeFormat: 'h:mm p',
+    interval: 30,
+    minTime: '10',
+    maxTime: '9:00pm',
+    defaultTime: '12',
+    startTime: '06:00',
+    dynamic: false,
+    dropdown: true,
+    scrollbar: true
+});
+        function setCloseModal(){
+            $('.modal').hide();
+
+        }
+        function setOpenModal(){
+            $('.modal').show();
+
+        }
+        AOS.init({
+            duration: 1200,
+            })
+        Fancybox.bind("[data-fancybox]", {
+        });
+        function setOpenMenu(){
+            $('.burger').toggleClass('burger-active');
+            $('.header__mobmenu').toggleClass('mobmenu-active');
+            $('.popup_overlay').show();
+        }
+        function setClose(){
+        $('.popup_overlay').hide();
+        $('.header__mobmenu').removeClass('mobmenu-active');
+        $('.burger').removeClass('burger-active');
+
+        };
+</script>
+</body>
+</html>

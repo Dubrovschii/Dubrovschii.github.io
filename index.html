@@ -107,24 +107,26 @@
                 <div class="contact__form modal__form">
                     <div class="contact__form_name modal__form_name">
                         <label for="name">Name</label>
-                        <input type="text" id="namemodal" placeholder="Input your name">
+                        <input type="text" id="namemodal" name="name"
+                        placeholder="Input your name">
                     </div>
                     <div class="contact__form_email modal__form_phone">
                         <label for="phonemodal">Phone</label>
-                        <input type="phone" id="phonemodal"
+                        <input type="phone" id="phonemodal" name="phone"
                         placeholder="Input your phone">
                     </div> 
                     <div class="contact__form_email modal__form_date">
                         <label>Select Date: </label>
-                        <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
-                            <input class="form-control " type="text" readonly />
+                        <div id="datepicker"   class="input-group date" data-date-format="mm-dd-yyyy">
+                            <input name="datepicker"
+                            class="form-control " type="text" readonly />
                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                         </div>
                     </div> 
                     <div class="contact__form_email modal__form_time">
                         <label for="time">Time</label>
                         <input  
-                        placeholder="Input your time" class="timepicker">
+                        placeholder="Input your time" class="timepicker" name="time">
                     </div> 
                 </div>
                 <button class="contact__btn modal__btn">Send</button>
@@ -388,24 +390,24 @@
             <div class="contact__quiz">
                 <h4 class="contact__title">Have any questions?</h4>
                 <div class="contact__quiz_block">
-                    <form action="/">
+                    <form action="#" >
                     <div class="contact__form">
                         <div class="contact__form_name">
                             <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Input your name">
+                            <input type="text" id="name" name="name" placeholder="Input your name">
                         </div>
                         <div class="contact__form_email">
                             <label for="email">Email</label>
-                            <input type="email" id="email"
+                            <input type="email" id="email" name="email"
                             placeholder="Input your email">
                         </div> 
                     </div>
                         <div class="contact__form_message"> 
                             <label for="message">Speciale Request</label> <br>
-                            <textarea name="" id="message" placeholder="Input your Speciale Request"></textarea>
+                            <textarea  id="message" name="message" placeholder="Input your Speciale Request"></textarea>
                         </div>
                         <br>
-                        <button class="contact__btn">Send</button>
+                        <button type="submit" class="contact__btn">Send</button>
 
                     </form>
                 </div>
@@ -444,7 +446,7 @@
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="lib/jquery/jquery.2.2.2.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<sccript src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></sccript>
 <script src="lib/aos-master/dist/aos.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -481,6 +483,8 @@ $(function () {
             duration: 1200,
             })
         Fancybox.bind("[data-fancybox]", {
+            loop: true, 
+            animationEffect: "fade",
         });
         function setOpenMenu(){
             $('.burger').toggleClass('burger-active');

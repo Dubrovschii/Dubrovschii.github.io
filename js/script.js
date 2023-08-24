@@ -42,7 +42,6 @@ function typeText() {
 function calculateEraseDelay(length) {
   let eraseTime = 700;
   let eraseDelay = eraseTime / length; 
-  // Расчет времени задержки на каждый символ
   return eraseDelay;
 }
 
@@ -52,47 +51,7 @@ setTimeout(function() {
 
 
 
-  //   // Функция для отправки данных формы с использованием AJAX
-  //   function sendForm() {
-  //     // Получение значений полей формы
-  //     const name = document.getElementById('namemodal').value;
-  //     const phone = document.getElementById('phonemodal').value;
-  //     const date = document.getElementById('datepicker').value;
-  //     const time = document.querySelector('.timepicker').value;
 
-  //     const statusMessage = document.createElement('div');
-  //     statusMessage.classList.add('status');
-  //     statusMessage.textContent = message.loading;
-
-  //     form.append(statusMessage);
-  //     // Создание объекта с данными для отправки на сервер
-  //     const formData = new FormData();
-  //     formData.append('name', name);
-  //     formData.append('phone', phone);
-  //     formData.append('date', date);
-  //     formData.append('time', time);
-
-  //     // Отправка данных на сервер с использованием AJAX
-  //     fetch('server.php', {
-  //         method: 'POST',
-  //         body: formData
-  //     })
-  //     .then(response => response.text())
-  //     .then(data => {
-  //         // Отображение ответа сервера
-  //         console.log(data); // Замените на более подходящий способ отображения ответа
-  //     })
-  //     .catch(error => {
-  //         console.error('Ошибка:', error);
-  //     });
-  // }
-
-  // // Обработка события отправки формы
-  // const form = document.querySelector('.modal__form');
-  // form.addEventListener('submit', function (e) {
-  //     e.preventDefault();
-  //     sendForm(); // Вызывает функцию для отправки данных
-  // });
 
 const inputName = document.querySelector('#name');
 const inputMail = document.querySelector('#phone');

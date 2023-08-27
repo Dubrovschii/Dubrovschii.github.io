@@ -71,13 +71,15 @@
         </div>
     </header>
     <section class="promo">
-        <div class="promo__wrap wrap1200">
+        <div class="popup_overlay1 overlay"></div>
+
+        <div class="promo__wrap wrap1200 ">
             <h3 class="promo__clock">OPEN EVERYDAY
                 6AM - 9PM.</h3>
             <h1 class="promo__title">A bad day with lunch is better than a good day without it.</h1>
             <div class="promo__down wrap1200">
-                <button class="promo__btn" onclick="setOpenModal(this)">Reserve a table</button>
-
+                <button class="promo__btn"  data-modal>Reserve a table</button>
+                <!-- onclick="setOpenModal(this)" -->
             <ul class="promo__icons">
                 <li class="promo__item">
                     <a href="#">Fb</a>
@@ -95,41 +97,45 @@
             </div>
         </div>
 
-        <div class="modal" style="display: none;">
+        <div class="modal" >
             <div class="modal__wrap wrap700">
                 <div class="modal__header">
                     <h4>Reserve a table</h4>
                 </div>
-                <button class="modal__close" onclick="setCloseModal(this)">
+                <button data-close  class="modal__close" >
                     <span></span>
                     <span></span>
                 </button>
-                <div class="contact__form modal__form">
-                    <div class="contact__form_name modal__form_name">
-                        <label for="name">Name</label>
-                        <input type="text" id="namemodal" name="name"
-                        placeholder="Input your name">
-                    </div>
-                    <div class="contact__form_email modal__form_phone">
-                        <label for="phonemodal">Phone</label>
-                        <input type="phone" id="phonemodal" name="phone"
-                        placeholder="Input your phone">
-                    </div> 
-                    <div class="contact__form_email modal__form_date">
-                        <label>Select Date: </label>
-                        <div id="datepicker"   class="input-group date" data-date-format="mm-dd-yyyy">
-                            <input name="datepicker"
-                            class="form-control " type="text" readonly />
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <form action="#">
+                    <div class="contact__form modal__form">
+                        <div class="contact__form_name modal__form_name">
+                            <label for="name">Name</label>
+                            <input type="text" id="namemodal" name="name"
+                            placeholder="Input your name" required>
                         </div>
-                    </div> 
-                    <div class="contact__form_email modal__form_time">
-                        <label for="time">Time</label>
-                        <input  
-                        placeholder="Input your time" class="timepicker" name="time">
-                    </div> 
-                </div>
-                <button class="contact__btn modal__btn">Send</button>
+                        <div class="contact__form_email modal__form_phone">
+                            <label for="phonemodal">Phone</label>
+                            <input type="phone" id="phonemodal" name="phone"
+                            placeholder="Input your phone" required>
+                        </div> 
+                        <div class="contact__form_email modal__form_date">
+                            <label>Select Date: </label>
+                            <div id="datepicker"   class="input-group date" data-date-format="mm-dd-yyyy">
+                                <input name="datepicker"
+                                class="form-control " type="text" readonly required />
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </div> 
+                        <div class="contact__form_email modal__form_time">
+                            <label for="time">Time</label>
+                            <input  
+                            placeholder="Input your time" class="timepicker" name="time" required>
+                        </div> 
+                    </div>
+
+                    <button class="contact__btn modal__btn" type="submit">Send</button>
+                </form>
+               
             </div>
         </div>
     </section>

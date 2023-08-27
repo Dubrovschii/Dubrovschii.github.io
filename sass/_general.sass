@@ -23,7 +23,15 @@ a
     height: 100%;
     top: 0;
     left: 0;
-
+.popup_overlay1
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.2);
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 .header
     position: relative
     &__wrapper
@@ -488,7 +496,8 @@ a
     left: 50%
     top: 50%
     transform: translate(-50%, -50%)
-    z-index: auto
+    z-index: 5
+    display: none
     &__wrap
         position: relative
         // padding: 25px 0
@@ -576,147 +585,24 @@ a
         height: 45px
         display: block
         margin: 0 auto
-        margin-top: 20px
+        margin-top: 10px
         border-radius: 8px
             
 .form-control
     margin-top: 0
 .form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control
-    background-color: #fff    
-//     &__name
-//         display: flex
-//         flex-direction: column
-//         margin-left: 65px
-//         margin-top: 50px
-//     &__phone
-//         display: flex
-//         flex-direction: column
-//         margin-left: 65px
+    background-color: #fff        
+.show
+    display: block
+.hide
+    display: none
 
-//     &__btn
-//         width: 170px
-//         height: 100px
-//         color: #ffffff
-//         background-color: #3A4574
-//         display: block
-//         margin: 25px auto
-//         font-size: 18px
-//         font-weight: 500
-//         border-radius: 20px
-//         cursor: pointer
-
-
-
-    
-// #icons
-//     position: absolute
-//     transform: translate(-43px, 20px)
-// #mail
-//     position: absolute
-//     transform: translate(-38px, 25px)
-// #time
-//     position: absolute
-//     transform: translate(-35px, 25px)
-// .name, .email, .phone, .message
-//     display: flex
-//     flex-direction: column
-//     padding-right: 19px
-// #name, #email, #phone
-//     max-width: 360px
-//     width: 100%
-//     height: 80px
-//     margin-top: 10px
-//     border: 1px solid #CCCCCC 
-//     border-radius: 8px
-// #message
-//     border: 1px solid #CCCCCC 
-//     border-radius: 8px
-
-// label
-//     font-weight: 400
-//     font-size: 16px
-// ::placeholder
-//     padding-left: 16px
-//     padding-top: 16px
-
-// cl-btn-3 
-// 	width: 26px 
-// 	height: 26px 
-// 	margin: 40px auto 
-// 	position: relative 
-// 	transform: rotate(45deg) scale(2) 
-// .cl-btn-3 .top,
-// .cl-btn-3 .bot 
-// 	display: block 
-// 	background: #337AB7 
-// 	position: absolute 
-// 	top: 50% 
-// 	left: 50% 
-// 	animation-timing-function: cubic-bezier(1, 0, 0, 1) 
-// 	animation-iteration-count: 1 
-// .cl-btn-3 
-// 	.top 
-// 		height: 100% 
-// 		width: 2px 
-// 		margin-left: -1px 
-// 		transform: skewY(45deg) 
-// 		top: 0 
-// 	.bot 
-// 		width: 100% 
-// 		height: 2px 
-// 		margin-top: -1px 
-// 		transform: skewX(-45deg) 
-// 		left: 0 
-// 	&:hover 
-// 		.top 
-// 			animation: top-out 0.25s forwards, top-in 0.25s forwards 0.25s 
-// 		.bot 
-// 			animation: bot-out 0.25s forwards 0.1s, bot-in 0.25s forwards 0.35s 
-// @-webkit-keyframes top-out
-
-
- 
-	// @keyframes 
-	// 	top-out 
-	// 		from {
-    //     top: 0% 
-	// 		height: 100% 
-	// 	top-in 
-	// 		from {
-    //     top: -100% 
-	// 		height: 0% 
-	// 	bot-out 
-	// 		from {
-    //     left: 0% 
-	// 		width: 100% 
-	// 	bot-in 
-	// 		from {
-    //     left: -100% 
-	// 		width: 0% 
-	// @-webkit-keyframes 
-	// 	top-in 
-	// 		from {
-    //     top: -100% 
-	// 		height: 0% 
-	// 	bot-out 
-	// 		from {
-    //     left: 0% 
-	// 		width: 100% 
-	// 	bot-in 
-	// 		from {
-    //     left: -100% 
-	// 		width: 0% 
-	// .cl-btn-3 
-		&:hover 
-			cursor: pointer 
-
-
-    
-
-
-
-
-                
+.status
+    color: red
+    padding-bottom: 20px
+    text-align: center
+    margin: 0 auto
+          
 
 
                

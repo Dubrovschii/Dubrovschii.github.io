@@ -1,3 +1,5 @@
+'use strict';
+
 const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: false,
@@ -62,7 +64,57 @@ const message = {
   success: 'Спасибо! Скоро мы с вами свяжемся',
   failure: 'Что-то пошло не так...'
 };
+
+
 forms.forEach(item => {
+  postData(item);
+  
+});
+function postData(form) {
+  form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let statusMessage = document.createElement('div');
+      statusMessage.classList.add('status');
+      statusMessage.textContent = message.loading;
+      form.appendChild(statusMessage);
+
+
+      const request = new XMLHttpRequest();
+      request.open('POST', 'server.php');
+      request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+      const formData = new FormData(form);
+
+      const object = {};
+      formData.forEach(function(value, key){
+          object[key] = value;
+      });
+      const json = JSON.stringify(object);
+
+      request.send(json);
+
+      request.addEventListener('load', () => {
+          if (request.status === 200) {
+              console.log(request.response);
+              statusMessage.textContent = message.success;
+              form.reset();
+              setTimeout(() => {
+                  statusMessage.remove();
+              }, 20000);
+          } else {
+              statusMessage.textContent = message.failure;
+          }
+      });
+  });
+}
+
+
+
+const inputModalName = document.querySelector('#namemodal');
+const inputModalMail = document.querySelector('#phonemodal');
+const inputModalTextarea = document.querySelector('#message');
+const form = document.querySelectorAll('modal');
+form.forEach(item => {
   postData(item);
 });
 function postData(form) {
@@ -101,3 +153,32 @@ function postData(form) {
       });
   });
 }
+
+const modalTrigger = document.querySelector('.promo__btn');
+const modal = document.querySelector('.modal');
+const modalCloseBtn = document.querySelector('[data-close]');
+const lay = document.querySelector('.overlay');
+
+
+function openModal(){
+  modal.classList.add('show')
+  modal.classList.remove('hide')
+  lay.classList.add('show')
+  clearInterval(modalTimerId);
+}
+modalTrigger.addEventListener('click', openModal);
+
+function closeModal (){
+  modal.classList.add('hide')
+  modal.classList.remove('show')
+  lay.classList.remove('show')
+}
+modalCloseBtn.addEventListener('click', closeModal);
+lay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', (e) => {
+  if (e.code === "Escape" && modal.classList.contains('show')){
+    closeModal();
+  }
+})
+const modalTimerId = setTimeout(openModal, 3000)
